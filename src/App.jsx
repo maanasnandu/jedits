@@ -2,7 +2,17 @@ import React, { useState, useEffect } from 'react'
 import jEdits from './assets/jedits_hero.jpg'
 import afterEf from './assets/after-effects_5611014.png'
 import premierp from './assets/premiere-pro_9814226.png'
-import davin from './assets/davinci_1146094.png'
+import davin from './assets/icons8-davinci-resolve-48.png'
+import prewedding from './assets/prewedding.jpg'
+import halfsaree from './assets/halfsaree1.jpg'
+import birthday from './assets/birthday.png'
+import gym from './assets/gym25.png'
+import haldi from './assets/haldi.jpg'
+import wedding from './assets/rohit.JPG'
+import babyshower from './assets/seemantham.jpg'
+import engagement from './assets/engagement.JPG'
+import invitations from './assets/invitations.jpg'
+import house from './assets/house.png'
 const App = () => {
   const [activeSection, setActiveSection] = useState('home')
   const [isScrolled, setIsScrolled] = useState(false)
@@ -68,13 +78,18 @@ const App = () => {
       />
 
       <style>{`
+     
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      
+
         /* Global Styles */
         * {
           box-sizing: border-box;
         }
         
         body {
-          font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+           font-family: "Poppins", sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
           margin: 0;
@@ -112,9 +127,13 @@ const App = () => {
         }
           
         .navLogo {
+         font-family: "Playfair Display", serif;
           font-size: 1.5rem;
           font-weight: bold;
         }
+          .navLogo .jLetter{
+          color: #7f8fa6;
+          }
 
         .navLogo span {
           color: #54a0ff;
@@ -198,6 +217,41 @@ const App = () => {
           visibility: visible;
         }
 
+        .slideshow-container {
+  position: relative;
+  width: 100%;
+
+  overflow: hidden;
+  
+}
+
+.slideshow-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+.slideshow-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out; /* smooth glide */
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  flex: 0 0 100%; /* each image takes full container */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
         .mobileMenuToggle {
           display: block;
           background: none;
@@ -235,16 +289,46 @@ const App = () => {
         }
 
         /* Hero Section */
-        .heroSection {
-          position: relative;
-          height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 1.5rem;
-          color: #fff;
-          overflow: hidden;
-        }
+       .heroSection {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.slideshow-container {
+  position: absolute;
+  inset: 0; /* full background */
+  z-index: 0;
+}
+
+.slideshow-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2; /* sits above slideshow */
+  background-color: rgba(26, 32, 44, 0.6);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  max-width: 42rem;
+}
+
 
         .heroBackground {
           position: absolute;
@@ -259,11 +343,11 @@ const App = () => {
           background-size: cover;
           background-position: center;
           transition: opacity 1s ease-in-out;
-          opacity: 0;
+          opacity: 0.7;
         }
         
         .heroImage.visible {
-          opacity: 0.3;
+          opacity: 0.7;
           z-index: 1;
         }
 
@@ -375,7 +459,7 @@ const App = () => {
 
         @media (min-width: 1024px) {
           .servicesGrid {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
           }
         }
 
@@ -408,6 +492,47 @@ const App = () => {
           width: 2.5rem;
           color: #54a0ff;
         }
+
+        .softwareHoverCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.softwareHoverCard img {
+  width: 4rem;
+  height: 4rem;
+  transition: transform 0.3s ease;
+}
+
+.softwareHoverCard:hover img {
+  transform: scale(1.1);
+}
+
+.softwareDescription {
+  position: absolute;
+  bottom: 1rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  width: 80%;
+}
+
+.softwareHoverCard:hover .softwareDescription {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 
         .serviceTitle {
@@ -455,17 +580,32 @@ const App = () => {
         }
 
         .workCard {
-          background-color: #fff;
-          border-radius: 0.5rem;
-          box-shadow: 0 14px 16px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          overflow: hidden;
-          transition: all 0.5s ease;
-        }
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  transform: translateY(0) scale(1);
+  cursor: pointer;
+}
 
-        .workCard:hover {
-          box-shadow: 0 20px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-          transform: translateY(-0.5rem);
-        }
+.workCard:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px) scale(1.03);
+}
+
+.workCard img.workImage {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.workCard:hover img.workImage {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
 
         .workImage {
           width: 100%;
@@ -678,7 +818,8 @@ const Navbar = ({
   <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
     <div className='navbarContainer'>
       <div className='navLogo'>
-        J - <span className='navLogoSpan'>Edits</span>
+        <span className='jLetter'>J</span>
+        <span className='navLogoSpan'>Edits</span>
       </div>
       <div className='navLinks'>
         {sections.map(section => (
@@ -717,9 +858,10 @@ const Navbar = ({
 const HeroSection = ({ scrollToContact }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const backgroundImages = [
-    'https://i.imgur.com/EVWD0jU.png',
-    'https://i.imgur.com/umulgLg.png',
-    'https://placehold.co/1920x1080/111111/fff?text=Work+3'
+    'https://i.imgur.com/SYpGFAn.jpeg',
+
+    'https://i.imgur.com/1GTMidw.jpeg',
+    'https://i.imgur.com/NQwBsiF.jpeg'
   ]
 
   useEffect(() => {
@@ -727,24 +869,26 @@ const HeroSection = ({ scrollToContact }) => {
       setCurrentImageIndex(
         prevIndex => (prevIndex + 1) % backgroundImages.length
       )
-    }, 5000)
+    }, 3000)
     return () => clearInterval(interval)
   }, [])
 
   return (
     <section id='home' className='heroSection'>
-      <div className='heroBackground'>
-        {backgroundImages.map((image, index) => (
-          <div
-            key={index}
-            className={`heroImage ${
-              index === currentImageIndex ? 'visible' : ''
-            }`}
-            style={{ backgroundImage: `url(${image})` }}
-          ></div>
-        ))}
+      {/* Background slideshow */}
+      <div className='slideshow-container'>
+        <div
+          className='slideshow-track'
+          style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+        >
+          {backgroundImages.map((img, index) => (
+            <img key={index} src={img} alt='' className='slide' />
+          ))}
+        </div>
+        <div className='slideshow-overlay'></div>
       </div>
 
+      {/* Hero content (overlay) */}
       <div className='heroContent'>
         <div className='profileImage'>
           <img src={jEdits} alt='Profile' className='profileImageSrc' />
@@ -761,42 +905,6 @@ const HeroSection = ({ scrollToContact }) => {
         </button>
       </div>
     </section>
-  )
-}
-
-// Software Icons Component
-const Softwares = () => {
-  const softwareIcons = [
-    {
-      name: 'Premier Pro',
-      url: premierp
-    },
-    {
-      name: 'After Effects',
-
-      url: afterEf
-    },
-    {
-      name: 'Davinci Resolve',
-      url: davin
-    }
-  ]
-
-  return (
-    <div className='flex justify-center items-center h-screen bg-gray-100 p-4'>
-      <div className='flex justify-around items-center w-full mt-4'>
-        {softwareIcons.map(software => (
-          <div key={software.name} className='software-icon-container'>
-            <img
-              src={software.url}
-              alt={software.name}
-              className='softwareIcons'
-            />
-            <span className='software-icon-name'>{software.name}</span>
-          </div>
-        ))}
-      </div>
-    </div>
   )
 }
 
@@ -820,31 +928,63 @@ const ServicesSection = () => {
       description:
         'Creating custom video invitations for special events like weddings and birthdays.',
       icon: <i className='fa-solid fa-envelope-open-text'></i>
+    }
+  ]
+
+  const Usesoftwares = [
+    {
+      title: '',
+      description: 'Adobe Premiere Pro',
+      icon: premierp
     },
     {
-      title: 'Softwares',
-      description: <Softwares />,
-      icon: <i className='fa-solid fa-desktop'></i>
+      title: '',
+      description: 'Adobe After Effects',
+      icon: afterEf
+    },
+    {
+      title: '',
+      description: 'DaVinci Resolve',
+      icon: davin
     }
   ]
 
   return (
-    <section id='services' className='servicesSection'>
-      <div className='servicesContainer'>
-        <h2 className='sectionTitle'>
-          My <span className='sectionTitleSpan'>Expertise</span>
-        </h2>
-        <div className='servicesGrid'>
-          {services.map((service, index) => (
-            <div key={index} className='serviceCard'>
-              <div className='serviceIcon'>{service.icon}</div>
-              <h3 className='serviceTitle'>{service.title}</h3>
-              <p className='serviceDescription'>{service.description}</p>
-            </div>
-          ))}
+    <>
+      <section id='services' className='servicesSection'>
+        <div className='servicesContainer'>
+          <h2 className='sectionTitle'>
+            My <span className='sectionTitleSpan'>Expertise</span>
+          </h2>
+          <div className='servicesGrid'>
+            {services.map((service, index) => (
+              <div key={index} className='serviceCard'>
+                <div className='serviceIcon'>{service.icon}</div>
+                <h3 className='serviceTitle'>{service.title}</h3>
+                <p className='serviceDescription'>{service.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section id='services' className='servicesSection'>
+        <div className='servicesContainer'>
+          <h2 className='sectionTitle'>
+            <span className='sectionTitleSpan'>Software</span>
+          </h2>
+          <div className='servicesGrid'>
+            {Usesoftwares.map((soft, index) => (
+              <div key={index} className='serviceCard softwareHoverCard'>
+                <div className='serviceIcon'>
+                  <img src={soft.icon} alt={soft.description} />
+                </div>
+                <p className='softwareDescription'>{soft.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
 
@@ -852,24 +992,66 @@ const ServicesSection = () => {
 const WorksSection = () => {
   const works = [
     {
-      title: 'Wedding Highlight',
-      category: 'Weddings',
-      imageUrl: 'https://i.imgur.com/e8wQPOI.png'
+      title: 'Weddings',
+      category: 'Wedding Highlights',
+      imageUrl: wedding,
+      link: 'https://www.youtube.com/watch?v=4pkojX8EbaY'
     },
     {
-      title: 'Birthday Event',
-      category: "Birthday's",
-      imageUrl: 'https://placehold.co/600x400/111111/fff?text=Birthday+Event'
+      title: 'Birthday Events',
+      category: 'Birthdays',
+      imageUrl: birthday,
+      link: 'https://www.youtube.com/watch?v=mlMyhjmx9kA'
     },
     {
-      title: 'Engagement Reel',
-      category: 'Engagement',
-      imageUrl: 'https://placehold.co/600x400/363636/fff?text=Engagement+Reel'
+      title: 'Engagements',
+      category: 'Engagement Reels',
+      imageUrl: engagement,
+      link: 'https://www.youtube.com/watch?v=fTGl1mNV13M'
     },
     {
-      title: 'Short Film',
-      category: 'Independent Films',
-      imageUrl: 'https://i.imgur.com/jxR4wU1.png'
+      title: 'Pre-Wedding',
+      category: 'Pre-Wedding',
+      imageUrl: prewedding,
+      link: 'https://www.youtube.com/watch?v=ASoCThr0ImM'
+    },
+    {
+      title: 'Haldi',
+      category: 'Haldi Functions',
+      imageUrl: haldi,
+      link: 'https://www.youtube.com/watch?v=bd9MAZX2SPg'
+    },
+    {
+      title: 'Half Saree',
+      category: 'Half Saree Functions',
+      imageUrl: halfsaree,
+      link: 'https://www.youtube.com/watch?v=XWwM5RZgOB8'
+    },
+    {
+      title: 'House Warming',
+      category: 'House Warming Functions',
+      imageUrl: house,
+      link: 'https://www.youtube.com/watch?v=8euCTr-hqOU'
+    },
+
+    {
+      title: 'Invitations',
+      category: 'Wedding / Birthday / Any Function Digital Invitations',
+      imageUrl: invitations,
+      link: 'https://www.youtube.com/watch?v=Thijcw4df3o'
+    },
+    {
+      title: 'Baby Shower',
+      category: 'Baby Showers',
+      imageUrl: babyshower,
+      link: 'https://www.youtube.com/watch?v=N_od3uG2y7M'
+    },
+
+    {
+      title: 'Branding',
+      category: 'Custom Branding Reels',
+      imageUrl: gym,
+      link: 'https://www.youtube.com/watch?v=Hq77WAs1IZM'
     }
   ]
 
@@ -882,16 +1064,19 @@ const WorksSection = () => {
         <div className='worksGrid'>
           {works.map((work, index) => (
             <div key={index} className='workCard'>
-              <img
-                src={work.imageUrl}
-                alt={work.title}
-                className='workImage'
-                onError={e => {
-                  e.target.onerror = null
-                  e.target.src =
-                    'https://placehold.co/600x400/1e293b/fff?text=Image+Unavailable'
-                }}
-              />
+              <a href={work.link} target='_blank'>
+                <img
+                  src={work.imageUrl}
+                  alt={work.title}
+                  className='workImage'
+                  onError={e => {
+                    e.target.onerror = null
+                    e.target.src =
+                      'https://placehold.co/600x400/1e293b/fff?text=Image+Unavailable'
+                  }}
+                />
+              </a>
+
               <div className='workContent'>
                 <h3 className='workTitle'>{work.title}</h3>
                 <p className='workCategory'>{work.category}</p>
@@ -964,7 +1149,7 @@ const ContactSection = () => (
 const Footer = () => (
   <footer className='footer'>
     <p>
-      &copy; {new Date().getFullYear()} J-Edits Portfolio. All rights reserved.
+      &copy; {new Date().getFullYear()} JEdits Portfolio. All rights reserved.
     </p>
   </footer>
 )
