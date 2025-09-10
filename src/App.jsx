@@ -858,10 +858,10 @@ const Navbar = ({
 const HeroSection = ({ scrollToContact }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const backgroundImages = [
-    'https://i.imgur.com/SYpGFAn.jpeg',
-
-    'https://i.imgur.com/1GTMidw.jpeg',
-    'https://i.imgur.com/NQwBsiF.jpeg'
+    'https://i.imgur.com/gbzGkpx.jpeg',
+    'https://i.imgur.com/DMniy03.jpeg',
+    'https://i.imgur.com/QgOJRGz.jpeg',
+    'https://i.imgur.com/9r5TBIe.jpeg'
   ]
 
   useEffect(() => {
