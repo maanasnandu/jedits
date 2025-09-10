@@ -861,7 +861,9 @@ const HeroSection = ({ scrollToContact }) => {
     'https://i.imgur.com/gbzGkpx.jpeg',
     'https://i.imgur.com/DMniy03.jpeg',
     'https://i.imgur.com/QgOJRGz.jpeg',
-    'https://i.imgur.com/9r5TBIe.jpeg'
+    'https://i.imgur.com/9r5TBIe.jpeg',
+    'https://i.imgur.com/NQwBsiF.jpeg',
+    'https://i.imgur.com/SYpGFAn.jpeg'
   ]
 
   useEffect(() => {
@@ -995,7 +997,7 @@ const WorksSection = () => {
       title: 'Weddings',
       category: 'Wedding Highlights',
       imageUrl: wedding,
-      link: 'https://www.youtube.com/watch?v=4pkojX8EbaY'
+      link: 'https://www.youtube.com/watch?v=LYYneU9Anxw'
     },
     {
       title: 'Birthday Events',
