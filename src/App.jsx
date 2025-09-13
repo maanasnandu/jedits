@@ -296,7 +296,9 @@ const App = () => {
   align-items: center;
   justify-content: center;
   color: #fff;
-  overflow: hidden;
+ 
+  overflow: hidden !important;
+
 }
 
 .slideshow-container {
@@ -341,7 +343,7 @@ const App = () => {
           width: 100%;
           height: 100%;
           background-size: cover;
-          background-position: center;
+         
           transition: opacity 1s ease-in-out;
           opacity: 0.7;
         }
